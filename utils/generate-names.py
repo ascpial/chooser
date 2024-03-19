@@ -1,3 +1,4 @@
+# names source : https://1000randomnames.com/
 with open("name-list.txt", 'r', encoding="utf-8") as file:
     names = [line.strip() for line in file.readlines()]
 

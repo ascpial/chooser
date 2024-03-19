@@ -70,7 +70,7 @@ function load_people(members) {
 let loaded = false;
 
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('./output.json').then(async response => load_people(await response.json()));
+  fetch('./static/output.json').then(async response => load_people(await response.json()));
   const anchorEl = document.body.querySelector('#sort-anchor');
   const menuEl = document.body.querySelector('#sort-menu');
   menuEl.anchorElement = anchorEl;

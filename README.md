@@ -46,4 +46,19 @@ Les fonctionnalités incluses seront :
 
 Pour le moment, voilà à quoi ressemble l'interface :
 
-<img src="./docs/UI.png"/>
+<img src="./docs/ui-pc-light.png"/>
+<img src="./docs/ui-mobile-light.png"/>
+<img src="./docs/ui-mobile-sidebar-light.png"/>
+
+<img src="./docs/ui-pc-dark.png"/>
+<img src="./docs/ui-mobile-dark.png"/>
+<img src="./docs/ui-mobile-sidebar-dark.png"/>
+
+J'héberge le site à [cette addresse](https://chooser.ascpial.fr/).
+
+Les technologies utilisées pour l'interface sont les suivantes :
+
+- [Material Web](https://material-web.dev/), les composants web de [Material Design](https://m3.material.io/) ;
+- rollup, un outil pour compacter les dépendances en un seul fichier ;
+- de l'HTML, du CSS et du JS basique ;
+- [Google Fonts](https://fonts.google.com/) pour les icônes (l'appel aux services de Google ne sera présent que dans l'environnement de développement).

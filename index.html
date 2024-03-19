@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="./bundle.js"></script>
+  <script src="./code.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Chooser</title>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="branding">
+      <div class="branding-wrapper">
+        <md-icon> casino </md-icon>
+        <span class="brand"> Chooser </span>
+      </div>
+    </div>
+    <div class="start">
+      <md-icon-button id="sidebar_button" type='button' toogle=true onclick="console.log('hello'); toggle_sidebar();">
+        <md-icon>menu</md-icon>
+        <md-icon slot="selected">menu_open</md-icon>
+      </md-icon-button>
+      <md-icon id="replace_button"> toc </md-icon>
+      <md-outlined-text-field placeholder="Nom de la liste" class="global_name"
+        value="Vaisselle"></md-outlined-text-field>
+    </div>
+    <div class="end">
+      <md-icon-button>
+        <md-icon> person </md-icon>
+      </md-icon-button>
+    </div>
+  </div>
+  <div class="page">
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-wrapper">
+        <md-list style="max-width: 300px;">
+          <md-list-item type="button">
+            <label slot="supporting-text"> Dernier tirage </label>
+            <md-icon slot="start"> history </md-icon>
+          </md-list-item>
+          <md-list-item class="section">
+            <label slot="headline">Listes</label>
+            <md-icon-button slot="end"> <md-icon> add </md-icon> </md-icon-button>
+          </md-list-item>
+          <md-list-item type="button" class="selected">
+            <label slot="supporting-text">Vaisselle</label>
+            <md-icon slot="start"> toc </md-icon>
+            <md-icon-button slot="end" class="hidden-until-hover"> <md-icon> edit </md-icon> </md-icon-button>
+          </md-list-item>
+          <md-list-item type="button">
+            <label slot="supporting-text"> Jeu de rôle </label>
+            <md-icon slot="start"> toc </md-icon>
+            <md-icon-button slot="end" class="hidden-until-hover"> <md-icon> edit </md-icon> </md-icon-button>
+          </md-list-item>
+          <md-list-item type="button">
+            <label slot="supporting-text"> Passage MP* </label>
+            <md-icon slot="start"> toc </md-icon>
+            <md-icon-button slot="end" class="hidden-until-hover"> <md-icon> edit </md-icon> </md-icon-button>
+          </md-list-item>
+          <md-list-item type="button">
+            <label slot="supporting-text"> Passage MP </label>
+            <md-icon slot="start"> toc </md-icon>
+            <md-icon-button slot="end" class="hidden-until-hover"> <md-icon> edit </md-icon> </md-icon-button>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+    <div id="scrim" onclick="toggle_sidebar()"></div>
+
+    <div class="content">
+      <div class="content-wrapper">
+        <div class="table-actions">
+          <div class="start">
+            <md-checkbox touch-target="wrapper" id="general_checkbox" oninput="update_all();"></md-checkbox>
+            <span style="position: relative">
+              <md-icon-button id="sort-anchor"> <md-icon> sort </md-icon> </md-icon-button>
+              <md-menu id="sort-menu">
+                <md-menu-item>
+                  <div slot="headline">Prénom</div>
+                </md-menu-item>
+                <md-menu-item>
+                  <div slot="headline">Nom</div>
+                </md-menu-item>
+                <md-menu-item>
+                  <div slot="headline">Dernier passage</div>
+                </md-menu-item>
+              </md-menu>
+            </span>
+          </div>
+          <div class="end">
+            <md-filled-tonal-icon-button class="delete"> <md-icon>delete_forever</md-icon>
+            </md-filled-tonal-icon-button>
+            <md-filled-tonal-icon-button> <md-icon> add </md-icon> </md-filled-tonal-icon-button>
+            <md-icon-button> <md-icon> settings </md-icon> </md-icon-button>
+          </div>
+        </div>
+        <div class="loading-wrapper" id="loading-wrapper"><md-circular-progress indeterminate></md-circular-progress>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

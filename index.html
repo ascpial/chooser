@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <script src="./scripts/bundle.js"></script>
-  <script src="./scripts/index.js"></script>
+  <script type="module">
+    import {toggle_sidebar, update_all, update_some, test} from "./scripts/index.js";
+    window.toggle_sidebar = toggle_sidebar;
+    window.update_all = update_all;
+    window.update_some = update_some;
+    window.test = test;
+  </script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/style.css">
@@ -20,7 +26,7 @@
       </div>
     </div>
     <div class="start">
-      <md-icon-button id="sidebar_button" type='button' toogle=true onclick="console.log('hello'); toggle_sidebar();">
+      <md-icon-button id="sidebar_button" type='button' toogle=true onclick="toggle_sidebar();">
         <md-icon>menu</md-icon>
         <md-icon slot="selected">menu_open</md-icon>
       </md-icon-button>
@@ -92,7 +98,7 @@
             </span>
           </div>
           <div class="end">
-            <md-filled-tonal-icon-button class="delete"> <md-icon>delete_forever</md-icon>
+            <md-filled-tonal-icon-button class="delete" onclick="test();"> <md-icon>delete_forever</md-icon>
             </md-filled-tonal-icon-button>
             <md-filled-tonal-icon-button> <md-icon> add </md-icon> </md-filled-tonal-icon-button>
             <md-icon-button> <md-icon> settings </md-icon> </md-icon-button>
